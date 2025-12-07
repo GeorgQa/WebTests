@@ -20,7 +20,7 @@ class LoginPageLocators:
 
 class LoginPageLocatorsHelper(BasePage):
     def __init__(self, driver):
-        self.driver = driver
+        super().__init__(driver)
         self.check_page()
 
     def check_page(self):
