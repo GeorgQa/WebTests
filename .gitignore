@@ -209,3 +209,5 @@ __marimo__/
 .venv/.gitignore
 *.xml
 /.idea/.gitignore
+
+allure-results
