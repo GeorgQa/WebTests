@@ -1,7 +1,7 @@
 import allure
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
+from pages.base_page import BasePageHelper
 
 
 class LoginPageLocators:
@@ -20,7 +20,7 @@ class LoginPageLocators:
     BUTTON_RECOVER_ACCOUNT = (By.XPATH, "//span[contains(@class, 'vkuiButton__content') and text()='Восстановить'] | //button[@data-l='t,restore']")
     GO_BACK_BUTTON = (By.XPATH , "//span[text()='Отмена']")
 
-class LoginPageHelper(BasePage):
+class LoginPageHelper(BasePageHelper):
     def __init__(self, driver):
         super().__init__(driver)
         self.check_page()
