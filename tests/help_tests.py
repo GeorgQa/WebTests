@@ -16,3 +16,5 @@ def test_help_test(browser):
     help_page.scroll_to_element(locator=HelpPageLocators.ADVERTISEMENT_CABINET)
     AdvertisementPageHelper(browser)
 
+
+
