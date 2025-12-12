@@ -45,7 +45,7 @@ class LoginPageHelper(BasePage):
     @allure.step("Нажимаем на кнопку 'Войти'")
     def click_login(self):
         self.attach_screenshot()
-        self.find_element(locator=LoginPageLocators.LOGIN_BUTTON, time=2).click()
+        self.find_element(locator=LoginPageLocators.LOGIN_BUTTON, time=5).click()
 
     @allure.step("Получаем текст ошибки 'Введите логин'")
     def get_error_login(self):
@@ -76,4 +76,3 @@ class LoginPageHelper(BasePage):
     def click_registration(self):
         self.attach_screenshot()
         self.find_element(locator=LoginPageLocators.REGISTER_BUTTON, time=2).click()
-

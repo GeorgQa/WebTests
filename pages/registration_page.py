@@ -36,6 +36,8 @@ class RegistrationPageHelper(BasePage):
         return country_code
 
     def get_phone_field_value(self):
+        with allure.step("Проверяем корректность выбора случайной страны и сравниваем"):
+            self.attach_screenshot()
         return  self.find_element(RegistrationPageLocators.PHONE_FIELD).get_attribute(name="value")
 
 
