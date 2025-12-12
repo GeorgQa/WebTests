@@ -11,7 +11,7 @@ class LoginPageLocators:
     LOGIN_BUTTON = (By.XPATH, "//*[@type='submit' and (contains(@class, 'button-pro') or contains(@class, 'vkuiButton__host') or @value='Войти в Одноклассники' or .//*[text()='Войти'])]")
     LOGIN_BUTTON_WITH_QR_CODE = (By.XPATH, "//button[.//span[text() ='Войти по QR-коду']]")
     LOGIN_TAB_QR_CODE = (By.XPATH , '//*[@data-l="t,qr_tab"]')
-    REGISTER_BUTTON =  (By.XPATH,"//button[@type='button' and .//span[text()='Зарегистрироваться']]")
+    REGISTER_BUTTON = (By.XPATH, "//button[.//*[contains(text(), 'Зарегистрироваться')]] | //a[text()='Зарегистрироваться' and @data-l='t,register' and @tsid='login-block21_link_ffa6bf']")
     SIGN_IN_VK = ( By.XPATH, '//*[@data-l="t,vkc"]')
     SIGN_IN_MAIL_RU = ( By.XPATH, '//*[@data-l="t,mailru"]')
     SIGN_IN_YANDEX = ( By.XPATH, '//*[@data-l="t,yandex"]')
@@ -71,4 +71,9 @@ class LoginPageHelper(BasePage):
     def click_recovery(self):
         self.attach_screenshot()
         return self.find_element(LoginPageLocators.BUTTON_RECOVER_ACCOUNT).click()
+
+    @allure.step("Нажимаем на кнопку 'Зарегистрироваться'")
+    def click_registration(self):
+        self.attach_screenshot()
+        self.find_element(locator=LoginPageLocators.REGISTER_BUTTON, time=2).click()
 

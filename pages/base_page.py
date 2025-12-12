@@ -1,3 +1,5 @@
+from selenium.webdriver.support import expected_conditions
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 import allure
@@ -9,6 +11,9 @@ class BasePage:
 
     def find_element(self, locator, time=5):
         return WebDriverWait(self.driver, timeout=time).until(expected_conditions.visibility_of_element_located(locator=locator), message=f"Не удалось найти элемент: {locator}")
+
+    def find_elements(self, locator, time=5):
+        return WebDriverWait(self.driver, timeout=time).until(expected_conditions.presence_of_all_elements_located(locator), message=f"Не удалось найти элементы в DOM: {locator}")
 
     @allure.step("Открываем страницу")
     def get_url(self, url):
