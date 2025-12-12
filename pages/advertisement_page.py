@@ -1,13 +1,13 @@
 import allure
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
+from pages.base_page import BasePageHelper
 
 
 class AdvertisementPageLocators:
     TEXT_IN_ADVERTISEMENT = (By.XPATH, '//a[contains(@href, "reklamnyi-kabinet") and .//span[text()="Рекламный кабинет"]]')
 
 
-class AdvertisementPageHelper(BasePage):
+class AdvertisementPageHelperHelper(BasePageHelper):
     def __init__(self, driver):
         super().__init__(driver)
         self.check_page()
